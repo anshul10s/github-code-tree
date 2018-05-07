@@ -17,8 +17,8 @@ function start() {
     if(!$('.gct-folder-name').length) {
       oldLocation = location.origin + location.pathname;
 
-      urlPullRegex = /(http|https):\/\/(www\.)?github\.com\/[-a-zA-Z0-9]*\/[-a-zA-Z0-9]*\/pull\/[0-9]*\/(files|commits)/;
-      urlCommitRegex = /(http|https):\/\/(www\.)?github\.com\/[-a-zA-Z0-9]*\/[-a-zA-Z0-9]*\/commit/;
+      urlPullRegex = /(http|https):\/\/(www\.)?github(\.fkinternal|)\.com\/[-a-zA-Z0-9]*\/[-a-zA-Z0-9]*\/pull\/[0-9]*\/(files|commits)/;
+      urlCommitRegex = /(http|https):\/\/(www\.)?github(\.fkinternal|)\.com\/[-a-zA-Z0-9]*\/[-a-zA-Z0-9]*\/commit/;
 
       isCommit = location.href.match(urlCommitRegex);
 
@@ -66,6 +66,10 @@ function initialSetup() {
 
   $('#collapseAll').click(() => {
     collapseAllDiffBlocks();
+  });
+
+  $('.pr-toolbar').click( () =>  {
+     $('.gct-file-tree').toggle();
   });
 }
 

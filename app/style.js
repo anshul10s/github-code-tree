@@ -4,7 +4,9 @@ function injectCss(offsetTop, offsetLeft) {
     body.full-width #files {
       margin-left: 300px;
     }
-
+    .close-btn {
+      position: sticky
+    }
     .gct-header {
       display: flex;
       flex-direction: row;
@@ -21,7 +23,7 @@ function injectCss(offsetTop, offsetLeft) {
       background-color: #fff;
       left: ${offsetLeft}px;
       z-index: 28;
-      width: 280px;
+      width: 240px;
       border: 1px solid #ddd;
       overflow: auto;
       padding: 10px;
